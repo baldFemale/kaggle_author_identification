@@ -1,0 +1,2 @@
+# kaggle_author_identification
+数据挖掘课程作业，根据文本识别恐怖小说作家
