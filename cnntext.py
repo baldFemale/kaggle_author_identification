@@ -7,6 +7,7 @@ class cnntext:
     """
     def __init__(self,num_class,sequence_length,num_filter,filter_sizes,embed_size,vocab_size,batch_size,
                  learning_rate,decay_rate,decay_step,clip_gradients=5.0,initializer=tf.random_normal_initializer(stddev=0.1)):
+        tf.reset_default_graph()
         self.embed_size = embed_size
         self.vocab_size = vocab_size
         self.batch_size = batch_size
