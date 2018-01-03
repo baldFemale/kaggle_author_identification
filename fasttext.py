@@ -78,12 +78,9 @@ class fasttext:
             print('loss0:',loss)
             loss = tf.reduce_mean(loss,axis=1)
             print("loss1:",loss)
-        #需要了解
-        l2_loss = tf.add_n([tf.nn.l2_loss(v) for v in tf.trainable_variables() if 'bias' not in v.name])
         return loss
 
     def train(self):
-        #需要了解了解
         learning_rate = tf.train.exponential_decay(self.learning_rate,self.global_step,self.decat_step,self.decay_rate,staircase=True)
         train_op = tf.contrib.layers.optimize_loss(self.loss_val,global_step = self.global_step,learning_rate=learning_rate,optimizer="Adam")
         return train_op
